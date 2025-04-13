@@ -1,0 +1,43 @@
+/* Styles inside @media print are applied only when printing the page */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  /* Show only the printable area */
+  #printable, #printable * {
+    visibility: visible;
+    display: block !important;
+  }
+
+   /* Position the printable area at the top-left */
+  #printable {
+    position: absolute;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+  }
+
+  /* Remove bottom spacing from the last heading */
+  #printable h2:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Force hidden elements to show in print */
+  .hidden {
+    display: block !important;
+  }
+
+  /* Style buttons for printing */
+  button {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    color: white !important;
+    background-color: #22c55e !important;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    display: inline-block;
+  }
+}
